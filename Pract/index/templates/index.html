@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>句子分享-首页</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<link rel="stylesheet" href="../../static/assets/css/noscript.css" />
+	</head>
+	{% if login %}
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Header -->
+					<header id="header">
+						<!-- <div class="logo">
+							<span class="icon fa-gem"></span>
+						</div> -->
+						<div class="content">
+							<div class="inner">
+								<h1>欢迎访问句子分享~</h1>
+								<p>在这里分享你最中意的句子给所有人</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="./seeallsen">句子墙</a></li>
+								<li><a href="./givesen">写一句</a></li>
+								<li><a href="./aboutme">关于我</a></li>
+							</ul>
+						</nav>
+					</header>
+	</body>
+	{% else %}
+	<body>
+		<h1>尚未登录*_*</h1>
+		<h5><a href="./login">登录</a> 之后才能体验更刺激的内容哦~~</h5>
+		<h5>还没有账号？赶快 <a href="./register">注册</a>一个吧^…^</h5>
+	</body>
+	{% endif %}
+</html>

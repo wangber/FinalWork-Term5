@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关于我</title>
+</head>
+<body>
+    <div class="mydetail">
+        <h2>我的资料</h2>
+        <hr>
+        <form action="" method="post">
+                <table>
+                        <tr>
+                            <th>昵称:</th>
+                            <td><input type="text" name="nickname" value={{me.nickname}}>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>个人宣言:</th>
+                            <td>
+                            <textarea name="presentence" id="" cols="30" rows="10">{{me.presentence}}</textarea>
+                            
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>地址:</th>
+                            <td><input type="text" name="location" id="" value={{me.location}}></td>
+                        </tr>
+                        <tr>
+                            <th>学校:</th>
+                            <td><input name="university" id="" value={{me.university}}>
+                            
+                            </td>
+                        </tr>
+                    </table>
+                     <input type="hidden" name="random_value" value={{random_value}} />
+                <div>
+                    <button type="submit" class = "btn btn-primary">保存资料修改</button>
+                </div>
+        </form>
+        
+    </div>
+    <hr>
+    <div class="mysen">
+        <h2>我的句子</h2>
+        <hr>
+        {% for one in allmysen %}
+            <div class="onemysen">
+
+                    <h5>句子主题：{{ one.title }}</h5>
+                    <p>{{ one.content }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <div>
+        <a href="../../../index/">返回首页</a>
+    </div>
+</body>
+
+<style>
+    .btn-primary {
+    background-color: #1ab394;
+    border-color: #1ab394;
+    color: #FFFFFF;
+    width: 100px;
+}
+
+.btn {
+    border-radius: 3px;
+}
+</style>
+</html>
