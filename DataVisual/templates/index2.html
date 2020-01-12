@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+    <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.5.5/css/layui.css">
+    <script src="https://www.layuicdn.com/layui/layui.js"></script>
+    <script src="../../../static/getgraph.js" charset="UTF-8"></script>
+    <script src="../../../static/jquery.cookie.js"></script>
+    
+
+</head>
+<body>
+<div class="container">
+        <div class="title">
+                <div class="page-header">
+                    
+                </div>
+        </div>
+        <div class="graph text-center row">
+                    <div class="onegraph col-md-6">
+                        <button id="getcloud" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal">ToSeeWordCloud</button>
+                        <div id="wordcloud" style="width:600px; height:400px;display:none;"></div>
+                    </div>
+                    <div class="onegraph col-md-6">
+                        <button id="getleida" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal">ToSeeLeida</button>
+                        <div id="leida" style="width:600px; height:400px;display:none;"></div>
+                    </div>
+        </div>
+        <div class="graph text-center row">       
+                    <div class="onegraph col-md-6">
+                            <button id="getcitynum" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal">ToSeecitynumbar</button>
+                            <div id="citynum" style="width:600px; height:400px;display:none;"></div>
+                    </div>
+                    <div class="onegraph col-md-6">
+                        <button id="getline" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal">ToSeeEmotionTime</button>
+                        <div id="emotionline" style="width:600px; height:400px;display:none;"></div>
+                    </div>
+        </div>
+</div>
+<style>
+*{
+    padding: 0;
+    margin: 0;
+
+}
+button{
+    margin: 50px;
+}
+body{
+    background-color: #DCD9D4; 
+ background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%); 
+ background-blend-mode: soft-light,screen;
+}
+
+</style>
+    
+    
+</body>
+<script>
+      $("#getleida").click(function () {
+          getGraph("leida","index2/leida/")
+      });
+      $("#getcitynum").click(function () {
+          getGraph("citynum","index2/citynumbar/")
+      });
+      $("#getline").click(function () {
+          getGraph("emotionline","index2/emotionline/")
+      });
+      $("#getcloud").click(function(){
+          $("#getcloud").html("loding......")
+          getCloud("wordcloud","index2/wordcloud/")
+      })
+
+</script>
+
+<script>
+$(function(){
+    var title = $(".page-header")
+    movie = $.cookie('moviename')
+    movie = $.parseJSON(movie);
+    var st ="Analysis of douban film review data"
+    title.html("<h1>"+movie+"<h1>"+"<small>"+st+"</small></h1>")
+})
+</script>
+</html>
