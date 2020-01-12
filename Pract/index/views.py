@@ -110,3 +110,10 @@ def allsen(request):
     }
     return render(request,"seeallsen.html",context=cont)
 # Create your views here.
+
+def emotiontype(request):
+    alltype = ['【优美语句】', '【伤感语句】', '【励志的话】', '【想念的句子】', '【爱情语句】','【其他句子】']
+    con = {
+        'alltype':alltype
+    }
+    return render(request,"alltype.html",context=con)

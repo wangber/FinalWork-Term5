@@ -8,5 +8,6 @@ urlpatterns = [
     path('login_result/',views.login),
     path('givesen/',views.givesen),
     path('seeallsen/',views.allsen),
-    path('aboutme/',view_mine.aboutme)
+    path('aboutme/',view_mine.aboutme),
+    path('alltype/',views.emotiontype),
 ]
