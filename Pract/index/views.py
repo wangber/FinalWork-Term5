@@ -1,6 +1,7 @@
 from django.shortcuts import render,HttpResponse,HttpResponseRedirect,redirect
 from .models import Myusers,Sen
 import hashlib
+from emotion.usemodelapi import * 
 
 #定义一个将密码加密的函数
 def md5(pwd,username):
@@ -65,7 +66,7 @@ def login(request):
                     if will_login.pwd == pwd:
                         #succes to login then set cookie
                         response = HttpResponseRedirect("../../index")
-                        response.set_cookie('username',user,360)
+                        response.set_cookie('username',user,3600)
                         response.set_cookie('_NAMEIDKEY',md5(pwd,user))
                         return response
                     else:
@@ -85,6 +86,7 @@ def givesen(request):
     if request.method =="POST":
         if request.COOKIES.get('username',''):
             username = request.COOKIES.get('username','')
+            print(username)
             try:
                 sharer = Myusers.objects.get(username=username)
             except Exception as e:
@@ -93,7 +95,11 @@ def givesen(request):
         title = request.POST.get("title","标题未设置")
         content = request.POST.get("sencontent","no things")
         print(sharer)
-        onesen = Sen(title=title,content=content,sharer=sharer)
+        try:
+            sentype = sentypepre(content)
+        except:
+            sentype = "其他"
+        onesen = Sen(title=title,content=content,sharer=sharer,sentype=sentype)
         onesen.save()
         return HttpResponse("句子发表成功！")
 

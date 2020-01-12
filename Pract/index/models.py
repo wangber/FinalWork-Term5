@@ -14,6 +14,7 @@ class Sen(models.Model):
     content = models.TextField(max_length=500,verbose_name="分享内容")
     sharer = models.ForeignKey('Myusers',on_delete=models.CASCADE,verbose_name="分享人")
     sharetime = models.DateField(auto_now_add=True)
+    sentype = models.CharField(max_length=10,verbose_name="句子类别",default="优美语句")
     def __str__(self):
         return self.title
 # Create your models here.

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+    <script src="../static/gettexttype.js"></script>
+    <title>文段分析</title>
+</head>
+<body>
+  <div class="container">
+      <table width="1000px" border="1" style="position: fixed;left: 60px;top :60px">
+          <tbody>
+            <tr>
+              <th width="80px" scope="row"><p style="text-align: left">输入文本段</p></th>
+              <td width="200px" height="100px">
+              <input style="text-align: left;resize: horizontal" text="text" type="text" class="form-control" id="textcon" placeholder="请输入文段" size="80" height="100px">
+                  </input>
+                  <button type="button" class="btn btn-primary givetext">提交分析</button>
+              </td>
+            </tr>
+          </tbody>
+    </table>
+  
+  <hr style="height:5px;border:none;border-top:5px ridge rgba(255,255,255,1.00);position: relative;top: 165px;left:0"/></hr>
+  <div id="text">
+    
+  </div>
+  <div class="emotion">
+      <table width="1000px" border="1" style="position: fixed;left:60px;top: 180px;margin-top:50px">
+          <tr>
+            <th scope="row" width="80px"><p style="text-align: left">成分比例分析</p></th>
+              <td width="200px" style="position: left"><strong>百分比</strong></td>
+          </tr>
+          <tr>
+            <th scope="row" width="80px"><p style="text-align: left">美句</p></th>
+            <td width="200px">&nbsp;</td>
+          </tr>
+          <tr>
+            <th scope="row" width="80px"><p style="text-align: left">爱情</p></th>
+            <td width="200px">&nbsp;</td>
+          </tr>
+          <tr>
+            <th scope="row" width="80px"><p style="text-align: left">伤感</p></th>
+            <td width="200px">&nbsp;</td>
+          </tr>
+          <tr>
+            <th scope="row" width="80px"><p style="text-align: left">励志</p></th>
+            <td width="200px">&nbsp;</td>
+          </tr>
+      </table>
+  
+    </div>
+  </div>
+    
+  
+</body>
+<style type="text/css">
+  body {
+    background-image: url('../static/717785.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-color: #FFFFFF;
+    background-attachment: fixed;
+  }
+    input{
+       border: none;
+       overflow: hidden;
+       height: 100%;
+       width: 100%;
+       margin-bottom: 10px;
+    } 
+
+  </style>
+
+<script>
+  $(".givetext").click(function () {
+    loadMoreGlobalData()
+});
+</script>
+</html>

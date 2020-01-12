@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+    <script src="../static/gettype.js"></script>
+    <title>句子类别</title>
+</head>
+<body>
+        <table width="1000px" border="1" style="position: fixed;left: 60px;top :60px">
+                <tbody>
+                  <tr>
+                    <th width="80px" scope="row"><p style="text-align: left">输入句子</p></th>
+                    <td width="200px" height="100px">
+                    <input style="text-align: left;resize: horizontal" text="text" type="text" class="form-control" id="sentence" placeholder="请输入句子" size="80" height="100px">
+                        </input>
+                        <button type="button" class="btn btn-primary givesen">提交判断</button>
+                    </td>
+                  </tr>
+                </tbody>
+          </table>
+    <table width="1000px" border="1" style="position: fixed;left:60px;top: 180px;margin-top:50px">
+        <tr>
+          <th scope="row" width="80px"><p style="text-align: left">句子类别</p></th>
+            <td width="200px" style="position: left"><strong>句子内容</strong></td>
+        </tr>
+        <tr>
+          <th scope="row" width="80px"><p style="text-align: left" class="sentype">暂无类别</p></th>
+          <td width="200px" class="sencon">暂无句子</td>
+        </tr>
+    </table>
+</body>
+
+<style type="text/css">
+    body {
+      background-image: url('../static/717785.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-color: #FFFFFF;
+      background-attachment: fixed;
+    }
+      input{
+         border: none;
+         overflow: hidden;
+         height: 100%;
+         width: 100%;
+         margin-bottom: 10px;
+      } 
+  
+    </style>
+  
+
+<script>
+    $(".givesen").click(function () {
+        loadMoreGlobalData()
+    });
+</script>
+
+</html>
